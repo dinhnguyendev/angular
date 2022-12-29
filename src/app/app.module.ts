@@ -8,9 +8,18 @@ import { HiComponent } from './hi/hi.component';
 import { HelloForComponent } from './hello-for/hello-for.component';
 import { HelloStyleComponent } from './hello-style/hello-style.component';
 import { HelloInputBindingComponent } from './hello-input-binding/hello-input-binding.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloComponent, HiComponent, HelloForComponent, HelloStyleComponent, HelloInputBindingComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    HiComponent,
+    HelloForComponent,
+    ProgressBarComponent,
+    HelloStyleComponent,
+    HelloInputBindingComponent,
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

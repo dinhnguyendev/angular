@@ -8,7 +8,5 @@ import { Component } from '@angular/core';
 export class HelloStyleComponent {
   isDanger = false;
   isWarning = false;
-  handelChangeToggle = () => {
-    this.isDanger = true;
-  };
+  handelChangeToggle = () => {};
 }
