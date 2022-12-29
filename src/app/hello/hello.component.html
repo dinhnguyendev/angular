@@ -1,0 +1,78 @@
+<div class="hello">hello components</div>
+<!-- {{ expresion}} =>>>> auto conver .toString() -->
+<p>
+  {{ user.name }}
+</p>
+<!-- {{ expresion}} =>>>> auto conver .toString() -->
+<p>
+  {{ user.age }}
+</p>
+
+<!-- 
+  // data binding
+  property binding ====> [] => gia tri nhan vao phai la 1 expresion
+  "''" ======> string text linepro
+ -->
+<input [type]="inputType" [value]="user.name" />
+
+<!-- 
+  //event binding
+ cu phap: (click)="handelClick()"
+ -->
+<button type="button" (click)="handelClick($event)">event binding</button>
+
+<!-- 
+  //two way binding
+ cu phap: [(ngModel)]="name"
+ ca import FormsModule in module no moi work
+
+
+
+ [ngModel]="name" ======> data binding
+ (ngModelChange)="name = $event"  ======>  event binding
+
+ ket hop lai ra two way binding
+ -->
+
+<h2>
+  {{ name }}
+</h2>
+
+<input type="text" [(ngModel)]="name" />
+
+<input type="text" [ngModel]="name" (ngModelChange)="name = $event" />
+
+<!-- 
+  strctual Directive =====> một cái condition làm 
+  thay đổi giá trị của một cái dom (giống như mình lấy component này ra bỏ comnponent khác dô) 
+   if {} else{}
+
+   dấu hiệu nhận biết có một dấu *
+ -->
+
+<!-- cach 1 -->
+<!-- <h3>test structtual Directive</h3>
+<app-hi *ngIf="user.age >= 10"></app-hi>
+<div *ngIf="user.age < 10">number less than 10</div>
+
+<button (click)="user.age = user.age - 1">-</button>
+<div class="">Age: {{ user.age }}</div>
+<button (click)="user.age = user.age + 1">+</button> -->
+<!-- cach 2 -->
+<!-- <h3>test structtual Directive</h3>
+<app-hi *ngIf="user.age > 500; else under18"></app-hi>
+<ng-template #under18> number less than 500 </ng-template> -->
+
+<!-- cach 3 -->
+<!-- <h3>test structtual Directive</h3>
+<ng-template [ngIf]="user.age > 10" [ngIfElse]="under18">
+  <app-hi> </app-hi>
+</ng-template>
+<ng-template #under18> number less than 10 </ng-template> -->
+
+<!-- propoty hidden nó sẽ không destroy -->
+<app-hi [hidden]="user.age < 10"></app-hi>
+
+<button (click)="user.age = user.age - 1">-</button>
+<div class="">Age: {{ user.age }}</div>
+<button (click)="user.age = user.age + 1">+</button>

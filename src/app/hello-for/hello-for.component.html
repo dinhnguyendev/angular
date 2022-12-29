@@ -1,0 +1,56 @@
+<p>hello-for works!</p>
+<!-- 
+    -$implicit: item Implicit Context Variable
+    -idnex
+    -count
+    -first:true nếu như item đó là item đầu tiên trong aray
+    -last: true nếu như item đó là item cuối cùng trong aray
+    -even :true nếu như item đó là item vị trí chẵn
+    -odd : true nếu như item đó là item vị trí lẽ
+-->
+<!-- <ul>
+  <li
+    *ngFor="
+      let somthing of user;
+      index as inx;
+      count as total;
+      first as idfirst;
+      last as islast;
+      even as iseven;
+      odd as isodd
+    "
+  >
+    <div class="">index is {{ inx }}</div>
+    <div class="">count is {{ total }}</div>
+    <div class="">first is {{ idfirst }}</div>
+    <div class="">last is {{ islast }}</div>
+    <div class="">even is {{ iseven }}</div>
+    <div class="">odd is {{ isodd }}</div>
+  </li>
+</ul> -->
+
+<ul>
+  <ng-container *ngIf="user.length > 0; else noUser">
+    <ng-template
+      ngFor
+      [ngForOf]="user"
+      let-somthing
+      let-inx="index"
+      let-total="count"
+      let-isfirst="first"
+      let-islast="last"
+      let-iseven="even"
+      let-isodd="odd"
+    >
+      <div class="">index is {{ inx }}</div>
+      <div class="">count is {{ total }}</div>
+      <div class="">first is {{ isfirst }}</div>
+      <div class="">last is {{ islast }}</div>
+      <div class="">even is {{ iseven }}</div>
+      <div class="">odd is {{ isodd }}</div>
+      <div class="">conver is {{ conver["true"] }}</div>
+      <br />
+    </ng-template>
+  </ng-container>
+  <ng-template #noUser> kho co user </ng-template>
+</ul>
