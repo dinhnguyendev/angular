@@ -1,0 +1,55 @@
+<p>hello-style works!</p>
+
+<!--
+
+    -[class.ten-class]="variable"
+    -[class]="array"
+    -[class]="object" ====> {
+        'ten-class': variable string :boolen
+    }
+    
+-->
+<!-- <div class="box" [class.warning]="isWarning" [class.danger]="isDanger"></div> -->
+<!-- <div class="box" [class]="['danger']"></div> -->
+<div
+  class="box"
+  [class]="{
+    warning: isWarning,
+    danger: isDanger
+  }"
+></div>
+
+<button (click)="isDanger = !isDanger">change isDanger</button>
+<br />
+<button (click)="isWarning = !isWarning">change isWarning</button>
+
+<!--
+
+    -[style.tenStyle]
+    -[style.ten-style]
+    -[style.ten-style.unit]
+    -[style]="{
+        artribute: value | variable
+    }"
+    
+-->
+
+<!-- <p [style.color]="'red'" [style.fontSize.rem]="2">hello style</p> -->
+<p
+  [style]="{
+    color: 'var(--text-color)',
+    backgroundColor: 'yellow'
+  }"
+  [style.fontSize.rem]="2"
+>
+  hello style
+</p>
+<p
+  [style.--text-color]="isDanger ? 'red' : 'blue'"
+  [style]="{
+    color: 'var(--text-color)',
+    backgroundColor: 'yellow'
+  }"
+>
+  hello theme css root style
+</p>

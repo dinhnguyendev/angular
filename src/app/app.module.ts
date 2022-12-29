@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { HiComponent } from './hi/hi.component';
 import { HelloForComponent } from './hello-for/hello-for.component';
+import { HelloStyleComponent } from './hello-style/hello-style.component';
+import { HelloInputBindingComponent } from './hello-input-binding/hello-input-binding.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloComponent, HiComponent, HelloForComponent],
+  declarations: [AppComponent, HelloComponent, HiComponent, HelloForComponent, HelloStyleComponent, HelloInputBindingComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
